@@ -1,8 +1,11 @@
 //amin CSS
-import pageConfig from './page.config'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './assets/css/main.scss'
+import pageConfig from './page.config';
 
 
-import {dynamicLoading} from './utils/index'
+import {dynamicLoading} from './utils/index';
 
 
 {
