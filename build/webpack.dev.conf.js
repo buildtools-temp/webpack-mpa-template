@@ -116,7 +116,7 @@ if (pageConf && Array.isArray(pageConf)) {
             );
             devWebpackConfig.entry[page.name] = _Entry;
         }
-        
+
         const defaultTit = 'My interviewMap';
         //add new htmlWebpackPlugin to plugins list
         devWebpackConfig.plugins.push(new HtmlWebpackPlugin({
