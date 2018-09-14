@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server  --config build/webpack.dev.conf.js",
     "build": "cross-env NODE_ENV=production env_config=prod node build/build.js",
-    "analyz": "NODE_ENV=production npm_config_report=true npm run build"
+    "analyz": "NODE_ENV=production npm_config_report=true npm run build",
+    "update": "./npmUpdate.config.sh"
   },
   "keywords": [
     "webpack",
@@ -38,10 +39,10 @@
     "copy-webpack-plugin": "^4.5.1",
     "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
+    "cx-grid": "1.2.3",
     "ejs": "^2.6.1",
     "ejs-loader": "^0.3.1",
     "exports-loader": "^0.7.0",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "glob": "^7.1.3",
