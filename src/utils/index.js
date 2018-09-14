@@ -37,8 +37,8 @@ export const loadHtml = (target, url) => {
         if (type === "number") {
             const li = $(menuItemCls).eq(url);
             const turl = li.find(">a").attr("data-href");
-            console.log(li)
-            console.log(turl)
+            console.log(li);
+            console.log(turl);
             loadHtml(target, turl);
         }
         else if (type === "string") {
@@ -103,3 +103,54 @@ export const dynamicLoading = {
         }
     }
 };
+
+
+export const Hbs = class {
+    /**
+     * Handlebars Direct Import
+     * @param temp
+     * @param targetID
+     * @param data
+     */
+    directImport(temp, targetID, data) {
+        $(targetID).html(temp(data));//把编译完成的代码放入到 .student-temp 的这个容器中
+    }
+
+    /**
+     * Handlebars Compile Import
+     * @param tmpID
+     * @param targetID
+     * @param data
+     * @returns {Promise<any>}
+     * @constructor
+     */
+    compileImport(tmpID, targetID, data) {
+        return new Promise((resolve, reject) => {
+            console.log('开始 compile hbs 模板,参数如下：模板ID ' + tmpID + ' 目标ID ' + targetID + '数据 ');
+            console.info(data);
+            try {
+                const sideMenuTemp = $(tmpID).html();//获取到handlebars这个模板中的全部html内容
+                const sideMenuTempFn = Handlebars.compile(sideMenuTemp);//编译
+                $(targetID).html(sideMenuTempFn(data));//把编译完成的代码放入到 .student-temp 的这个容器中
+                resolve();
+            }
+            catch (e) {
+                reject('请检查侧边栏模块载入是否正确');
+            }
+        })
+    }
+};
+
+
+/**
+ * get page config information
+ * @param pagelist
+ * @param name
+ */
+export function getPageConfig(pagelist, name) {
+    for (let conf of pagelist) {
+        if (conf.name === name) {
+            return conf;
+        }
+    }
+}
