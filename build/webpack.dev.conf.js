@@ -142,6 +142,11 @@ if (pageConf && Array.isArray(pageConf)) {
     })
 }
 
+console.log(11111111111)
+console.log(config.dev.contentBase)
+console.log(11111111111)
+
+
 /*-------------------------------------------------------------------------------------*/
 /*   start by Portfinder           						 															 					 */
 /*   确保启动程序时，如果端口被占用时，会通过portfinder来发布新的端口，然后输出运行的host字符串  */
