@@ -1,2 +1,9 @@
+import './contact.scss'
 
-console.log('contact');
+$(document).ready(readyHandler);
+
+function readyHandler() {
+    console.log('contact js');
+}
+
+
