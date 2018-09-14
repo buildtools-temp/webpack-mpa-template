@@ -1,6 +1,5 @@
 import './index.scss'
 
-
 $(document).ready(readyHandler);
 
 function readyHandler() {
@@ -8,8 +7,5 @@ function readyHandler() {
     $('#interviewMap').css('color', 'red');
 
 }
-
-
-
 
 
