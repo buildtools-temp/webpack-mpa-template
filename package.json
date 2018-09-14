@@ -5,11 +5,8 @@
   "description": "webpack mpa template ( webpack 的多页面项目构建示例 )",
   "main": "dist/index.html",
   "scripts": {
-    "test": "npm run build --[test]",
     "dev": "cross-env NODE_ENV=development webpack-dev-server  --config build/webpack.dev.conf.js",
-    "build": "cross-env NODE_ENV=production node build/build.js",
-    "build2": "cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js",
-    "server": "live-server ./ --port=8888",
+    "build": "cross-env NODE_ENV=production env_config=prod node build/build.js",
     "analyz": "NODE_ENV=production npm_config_report=true npm run build"
   },
   "keywords": [
