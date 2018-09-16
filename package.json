@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server  --config build/webpack.dev.conf.js",
     "build": "cross-env NODE_ENV=production env_config=prod node build/build.js",
     "analyz": "NODE_ENV=production npm_config_report=true npm run build",
-    "update": "./npmUpdate.config.sh"
+    "command": "./command.menu.sh"
   },
   "keywords": [
     "webpack",
