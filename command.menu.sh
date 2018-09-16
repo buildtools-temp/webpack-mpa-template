@@ -16,6 +16,7 @@ function Update_base {
     then
         echo cnpm exists
     else
+        echo 'Your connection to the default npm registry seems to be slow.Use https://registry.npm.taobao.org for faster installation'
         echo cnpm is not exists
         npm install -g cnpm --registry=https://registry.npm.taobao.org
     fi
@@ -30,7 +31,6 @@ function Update_base {
     echo "End time : `date +%Y-%m-%d,%H:%m:%s`"
     echo
     echo '========================== *** Update successful *** =========================='
-#    cat /proc/meminfo
 }
 
 
@@ -62,8 +62,9 @@ function Update_all {
 }
 function menu {
     clear
+    echo
     echo -e '\t ========== Design by Broccoli spring( gcx-高仓雄 ) <Lensgcx@163.com> =========='
-    echo ''
+    echo
     echo -e '\t\t\t (  ) (@@) ( )  (@)  ()    @@    O     @     O     @
                          (@@@)
                      (    )
