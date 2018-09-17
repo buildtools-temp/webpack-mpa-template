@@ -14,7 +14,18 @@ const PORT = process.env.PORT && Number(process.env.PORT);
 const webpackConfig = {
     mode: 'development', // 通过 mode 声明开发环境
     output: {
-        path: config.dev.assetsRoot,
+    /**
+     * ==================================================================
+     * [hash] ： 整个项目有变动时，hash 变化。
+     * [chunkhash] ： chunk 有变动，chunkhash 变化
+     * [contenthash] ： 目前文档没有明确定义和说明，但是和文件内容的变化相关
+     * ==================================================================
+     *
+     在分离 js 和 css 时，都用设置 contenthash.
+     * 配置js的文件名时，之前webpack3都是用chunkhash也没问题，但是实践后发现webpack4中用chunkhash，会导致，
+     * 修改css时引发js的chunkhash变化，从而缓存失效。
+     */
+    path: config.dev.assetsRoot,
         // 打包多出口文件
         filename: utils.assetsPath('js/[name].bundle.js'),
         publicPath:config.dev.assetsPublicPath
