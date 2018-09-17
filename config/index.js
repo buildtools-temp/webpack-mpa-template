@@ -10,7 +10,7 @@ module.exports = {
         entryFolderPath: './src/pages/**/*.js',//入口文件夹目录，从中寻找目标文件
 
         host: 'localhost', // can be overwritten by process.env.HOST
-        port: 8027,//端口号
+        port: 8017,//端口号
         inline: true,
         autoOpenBrowser: true,//是否自动打开浏览器
         errorOverlay: true,//当出现编译器错误或警告时，在浏览器中显示全屏覆盖层。默认禁用。
@@ -36,7 +36,7 @@ module.exports = {
         // Surge or Netlify already gzip all static assets for you.
         // Before setting to `true`, make sure to:
         // npm install --save-dev compression-webpack-plugin
-        productionGzip: false, // 是否开启 gzip
+        productionGzip: true, // 是否开启 gzip
         productionGzipExtensions: ['js', 'css'],// 需要使用 gzip 压缩的文件扩展名
 
         // Run the build command with an extra argument to
